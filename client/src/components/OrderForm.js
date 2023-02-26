@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {FoodType}  from './Constants.js';
 
 const OrderForm = ({ contract, account }) => {
-  const [foodType, setFoodType] = useState(FoodType.Pizza);
+  const [foodType, setFoodType] = useState(FoodType.PIZZA);
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
 
@@ -27,9 +27,9 @@ const OrderForm = ({ contract, account }) => {
       <div className="form-group">
         <label htmlFor="foodTypeSelect">Food Type:</label>
         <select className="form-control" id="foodTypeSelect" value={foodType} onChange={handleFoodTypeChange}>
-          <option value={FoodType.Pizza}>Pizza</option>
-          <option value={FoodType.Burger}>Burger</option>
-          <option value={FoodType.Salad}>Salad</option>
+          <option value={FoodType.PIZZA}>Pizza</option>
+          <option value={FoodType.BURGER}>Burger</option>
+          <option value={FoodType.SALAD}>Salad</option>
         </select>
       </div>
       <div className="form-group">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FoodOrderContract from "./contracts/FoodOrder.json";
+import foodOrderContract from "../contracts/FoodOrder.json";
 import getWeb3 from "./getweb3";
 
 const OrderList = () => {
@@ -13,9 +13,9 @@ const OrderList = () => {
       const _web3 = await getWeb3();
       const _accounts = await _web3.eth.getAccounts();
       const networkId = await _web3.eth.net.getId();
-      const deployedNetwork = FoodOrderContract.networks[networkId];
+      const deployedNetwork = foodOrderContract.networks[networkId];
       const _contract = new _web3.eth.Contract(
-        FoodOrderContract.abi,
+        foodOrderContract.abi,
         deployedNetwork && deployedNetwork.address,
       );
       setWeb3(_web3);
